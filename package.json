@@ -1,0 +1,24 @@
+{
+  "name": "juejin-count",
+  "version": "1.0.0",
+  "description": "Calculate the number puzzle of \"juejin\"",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csj1328059093/juejin-count.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csj1328059093/juejin-count/issues"
+  },
+  "homepage": "https://github.com/csj1328059093/juejin-count#readme"
+}
