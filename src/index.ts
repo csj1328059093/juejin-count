@@ -292,5 +292,3 @@ export const count = (arr: number[], operator: string[], target: number) => {
     console.log('最终表达式从左至右计算即可得到结果')
 }
 
-
-
