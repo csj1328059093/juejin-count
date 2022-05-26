@@ -1,6 +1,6 @@
 {
   "name": "juejin-count",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Calculate the number puzzle of \"juejin\"",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
