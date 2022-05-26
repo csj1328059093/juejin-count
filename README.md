@@ -7,6 +7,7 @@
 ![image](image/01.png)
 ```javascript
 // count.js
+// 因为引入node-fetch，包只能以esm形式导出
 import {count} from 'juejin-count'
 
 count([1, 1, 1, 2, 2, 3], ['+', '+', '*', '*', '/'], 11)
