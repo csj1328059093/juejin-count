@@ -1,3 +1,38 @@
+import fetch from 'node-fetch'
+
+export const countMy = async (uid: number = 4226950469779853) => {
+    const time = new Date().getTime()
+    const response = await fetch(`https://juejin-game.bytedance.com/game/num-puzz/ugc/start?uid=${uid}&time=${time}`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsInNvdXJjZSI6Imp1ZWppbiJ9.eyJleHBpcmVBdCI6MTY1NjEyMDQ0OSwidXNlcklkIjoiNDIyNjk1MDQ2OTc3OTg1MyIsImlhdCI6MTY1MzUyODQ0OSwiZXhwIjoxNjU2MTIwNDQ5fQ.wOiMyLwXO-nAx1HlG6YZOikZ--zG0GeVtMsX7Yrylcs7vcezj3LCQFbOBGHzOuwOa5tUr3RXUfnnnmlKmmFoMFODr-rA0Sy0g4s0bxHAYfFuXrusKn1IX6O-B264159g9G21Wl0lnoTCuBWgSd9KWN_4PcNZdgUOdN9TOEpcK2NUC7Pw5MuUWXwlVSq_kqyAlWSnumYwH3GGpra2B8CTZlHPauPi1lZ_iHy-r4ZB-lq5ajtD2dtaYW47on_6zXv8rOXbvTYhhMjgYPNv1b5t-TSC_u0aNBsocahHp7IKwt-AXK9uCW4qzGp8iXeRrPBV5ZKa7DnBw7FlscI7hd-Ygg"
+        }
+    })
+    const data = await response.json()
+    const arr = []
+    const operator = []
+    const target = data.data.target
+    data.data.map.map(row => {
+        row.map(column => {
+            if (column % 1 === 0) {
+                arr.push(column)
+            } else if (column === 0.6) {
+                operator.push('/')
+            } else if (column === 0.3) {
+                operator.push('+')
+            } else if (column === 0.5) {
+                operator.push('*')
+            } else if (column === 0.4) {
+                operator.push("-")
+            }
+        })
+    })
+    count(arr, operator, target)
+}
+
+countMy()
+
 export const count = (arr: number[], operator: string[], target: number) => {
     if (arr.sort().join(',') === '1314,520,6,6,6,6,8,8,8,8,9,9,9,9' && operator.sort().join(',') === ['+', '+', '-', '-', '*', '*', '/'].sort().join(',') && target === 9900) {
         console.log([1314, '', 520, '-', 8, '', 8, '*', 6, '', 6, '-', 6, '', 6, '+', 8, '/', 8, '+', 9, '', 9, '*', 9, '', 9])

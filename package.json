@@ -1,6 +1,6 @@
 {
   "name": "juejin-count",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Calculate the number puzzle of \"juejin\"",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild src/index.ts --bundle --outdir=lib --platform=node"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/csj1328059093/juejin-count/issues"
   },
-  "homepage": "https://github.com/csj1328059093/juejin-count#readme"
+  "homepage": "https://github.com/csj1328059093/juejin-count#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.4"
+  },
+  "type": "module"
 }
